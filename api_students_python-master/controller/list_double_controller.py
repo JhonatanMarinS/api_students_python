@@ -33,8 +33,8 @@ def save_student_to_end():
         return Response(status=409, response=json.dumps({"message": str(e)}), mimetype="application/json")
 
 
-@app_list_double.route('/list_double/add_to_position', methods=['POST'])
-def save_student_to_position():
+@app_list_double.route('/list_double/add_to_position/<position>', methods=['POST'])
+def save_student_to_position(position):
     data = request.json
     try:
         list_double_service.add_student_to_position(data, id)
@@ -43,8 +43,8 @@ def save_student_to_position():
     except Exception as e:
         return Response(status=409, response=json.dumps({"message": str(e)}), mimetype="application/json")
 
-@app_list_double.route('/list_double/delete_to_position',methods=['POST'])
-def delete_student_to_position():
+@app_list_double.route('/list_double/delete_to_position<position>',methods=['POST'])
+def delete_student_to_position(position):
     data = request.json
     try:
         list_double_service.delete_student_to_position(data)
