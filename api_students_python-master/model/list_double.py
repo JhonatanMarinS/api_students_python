@@ -20,10 +20,19 @@ class ListSEDoble:
         if self.head == None:
             self.head = NodeDoble(data)
         else:
-            temp = NodeDoble(data)
-            temp.next = self.head
-            temp.next.previous = temp
-            self.head = temp
+            new_node = NodeDoble(data)
+            new_node.next = self.head
+            self.head.previous = new_node
+            self.head = new_node
+
+    def list(self):
+        list = []
+        if self.head != None:
+            temp = self.head
+            while temp != None:
+                list.append(temp.data)
+                temp = temp.next
+        return list
 
     def invert(self):
         if self.head != None:

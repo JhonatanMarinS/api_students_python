@@ -8,7 +8,7 @@ class ListDoubleService:
         self.students = ListSEDoble()
 
     def get_all_students(self):
-        return self.students.head
+        return self.students.list()
 
     def add_student_to_start(self, data):
         student = Student(data)
