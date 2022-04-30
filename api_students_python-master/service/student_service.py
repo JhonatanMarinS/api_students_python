@@ -7,22 +7,18 @@ class StudentService:
 
     def __init__(self):
         self.students =[]
-        #carloaiza = Student({"idenfication":"75147236","name":"Carlos"})
-        #self.students.append(carloaiza)
-        #self.students.append(Student("363766667", 2, 0, False, "Valentina Hurtado",self.cities[1]))
-        #self.students.append(Student("233t6363", 1, 0, False, "Kevin Sánchez",self.cities[0]))
 
     def get_all_students(self):
         return self.students
 
-    def get_percentage_students_by_gender(self,gender):
+    def get_percentage_students_by_gender(self, gender):
         count =0
         for student in self.students:
             if student.gender == gender:
                 count = count +1
         return count/ len(self.students)
 
-    def get_percentage_students_job_avg_salary(self,gender):
+    def get_percentage_students_job_avg_salary(self, gender):
         count=0
         sum_salary=0
         for student in self.students:
